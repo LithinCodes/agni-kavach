@@ -8,7 +8,7 @@ import { createClient, SupabaseClient } from "@supabase/supabase-js";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 app.use(express.json());
 
@@ -649,8 +649,4 @@ async function startServer() {
   });
 }
 
-export default app;
-
-if (!process.env.VERCEL) {
-  startServer();
-}
+startServer();
