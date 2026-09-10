@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* Base Container Framing */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #050811;
+}
+
+/* Leaflet Dark Customizations */
+.leaflet-container {
+  background-color: #050811 !important;
+  font-family: 'Chakra Petch', 'JetBrains Mono', monospace;
+}
+
+/* Genuinely Keyless Dark Basemap (OpenStreetMap with high-contrast inverted GIS filter) */
+.map-tiles-dark .leaflet-tile {
+  filter: invert(100%) hue-rotate(180deg) brightness(82%) contrast(115%) grayscale(25%);
+}
+
+.agni-marker-wrapper {
+  background: transparent;
+  border: none;
+}
+
+/* Custom Dark Leaflet Tooltip */
+.leaflet-tooltip.agni-custom-leaflet-tooltip {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.leaflet-tooltip.agni-custom-leaflet-tooltip::before {
+  display: none !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080c14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Print Optimization for Incident Dossier */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, #kpi-command-strip, #left-triage-panel, #agni-map-wrapper, #firms-timeline-dock {
+    display: none !important;
+  }
+  #incident-dossier-modal {
+    position: static !important;
+    background: white !important;
+    padding: 0 !important;
+  }
+}
