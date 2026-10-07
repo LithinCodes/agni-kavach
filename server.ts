@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
-import { BASELINE_HOTSPOTS } from "./src/data/baselineDataset.ts";
+import { BASELINE_HOTSPOTS } from "./src/data/baselineDataset";
 
 // Prioritize IPv4 DNS lookups to prevent IPv6 getaddrinfo ENOTFOUND delays on containerized networks
 try {
