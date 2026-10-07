@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* ============================================================ */
+/* AGNI KAVACH: PREMIUM DARK COMMAND-CENTER DESIGN TOKENS       */
+/* ============================================================ */
+:root {
+  /* Primary Background: Very dark navy / charcoal */
+  --color-cmd-bg: #071018;
+  --color-cmd-bg-alt: #0A1118;
+  --color-cmd-bg-deep: #0D151D;
+
+  /* Surfaces & Panels: Slightly lighter dark navy */
+  --color-cmd-surface: #101A23;
+  --color-cmd-panel: #131F29;
+  --color-cmd-panel-elevated: #17232D;
+
+  /* Borders: Subtle blue-grey */
+  --color-cmd-border: #243441;
+  --color-cmd-border-strong: #304351;
+  --color-cmd-border-subtle: #1C2935;
+
+  /* Primary Thermal Accent: Amber / controlled orange */
+  --color-thermal-amber: #FF9F1C;
+  --color-thermal-amber-bright: #FFB020;
+  --color-thermal-amber-glow: rgba(255, 159, 28, 0.25);
+
+  /* Secondary Intelligence Accent: Restrained cyan / blue */
+  --color-intel-cyan: #35C6E8;
+  --color-intel-cyan-bright: #38BDF8;
+  --color-intel-cyan-glow: rgba(53, 198, 232, 0.20);
+
+  /* Semantic Priority Tokens (Explicitly Distinguishable) */
+  --color-priority-high: #EF4444;
+  --color-priority-medium: #F59E0B;
+  --color-priority-low: #10B981;
+  --color-priority-critical: #B91C1C;
+  --color-selected-cyan: #22D3EE;
+
+  /* Typography / Text Tokens */
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
+}
+
+/* Base Container Framing */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #071018;
+  color: #F1F5F9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Leaflet Dark Customizations */
+.leaflet-container {
+  background-color: #071018 !important;
+  font-family: 'JetBrains Mono', 'Chakra Petch', monospace;
+}
+
+/* Genuinely Keyless Dark Basemap (OpenStreetMap with high-contrast inverted command filter) */
+.map-tiles-dark .leaflet-tile {
+  filter: invert(100%) hue-rotate(185deg) brightness(85%) contrast(110%) grayscale(30%);
+}
+
+.agni-marker-wrapper {
+  background: transparent;
+  border: none;
+}
+
+/* Custom Dark Leaflet Tooltip */
+.leaflet-tooltip.agni-custom-leaflet-tooltip {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.leaflet-tooltip.agni-custom-leaflet-tooltip::before {
+  display: none !important;
+}
+
+/* Command Center Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1118;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #243441;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #35C6E8;
+}
+
+/* Clean Custom Scrollbar Hiding */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print Optimization for Incident Dossier */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  header, #compact-status-bar, #left-triage-panel, #agni-map-wrapper, #firms-timeline-bottom-dock {
+    display: none !important;
+  }
+  #incident-dossier-modal {
+    position: static !important;
+    background: white !important;
+    padding: 0 !important;
+  }
+}

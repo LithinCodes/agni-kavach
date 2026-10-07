@@ -1,0 +1,6 @@
+{
+  "name": "Agni Kavach",
+  "description": "AI-Enabled Geospatial Industrial Fire & Persistent Thermal Source Intelligence System (SIH26162)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
